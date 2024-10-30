@@ -1,0 +1,17 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Task1.1/.vs/ConsoleApp1
+/Task1.1/obj/Debug/net8.0
+/Task1.1/obj/Release/net8.0
+/Task1.2/obj
+/Task1.3/obj
+/Task2.1/obj
+/Task2.2/obj
+/Task2.3/.vs/TMS
+/Task2.3/obj/Debug/net8.0
+/Task2.3/obj/Release/net8.0
+/Task2.3/obj
+/Task1.1/obj
