@@ -3,31 +3,31 @@ namespace TMS
 {
     public class Training
     {
-        private object[] LectureLesson;
+        private Lesson[] LectureLesson;
         private int count;
 
 
         public Training()
         {
-            LectureLesson = new object[10];
+            LectureLesson = new Lesson[10];
             count = 0;
         }
 
 
-        public void Add(object subject)
+        public void Add(Lesson lesson)
         {
             if (count >= LectureLesson.Length)
             {
                 Array.Resize(ref LectureLesson, LectureLesson.Length * 2);
             }
-            LectureLesson[count] = subject;
+            LectureLesson[count] = lesson;
             count++;
         }
         public bool IsPractical()
         {
             for (int i = 0; i < count; i++)
             {
-                if (LectureLesson[i] is Lecture)
+                if (LectureLesson[i] is not PracticalLesson)
                 {
                     return false;
                 }
@@ -39,14 +39,7 @@ namespace TMS
             Training clonedTraining = new Training();
             for (int i = 0; i < count; i++)
             {
-                if (LectureLesson[i] is Lecture)
-                {
-                    clonedTraining.Add(((Lecture)LectureLesson[i]).Clone());
-                }
-                else if (LectureLesson[i] is PracticalLesson)
-                {
-                    clonedTraining.Add(((PracticalLesson)LectureLesson[i]).Clone());
-                }
+                clonedTraining.Add(LectureLesson[i].Clone());
             }
             return clonedTraining;
 

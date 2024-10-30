@@ -1,17 +1,15 @@
 ﻿
 namespace TMS
 {
-    public class Lecture
+    public class Lecture: Lesson
     {
-        public string Description { get; set; }
         public string Topic { get; set; }
 
-        public Lecture(string description, string topic)
+        public Lecture(string description, string topic) :base(description)
         {
-            Description = description;
             Topic = topic;
         }
-        public Lecture Clone()
+        public override Lesson Clone()
         {
             return new Lecture(Description,Topic);
         }

@@ -1,18 +1,17 @@
 ﻿
 namespace TMS
 {
-    public class PracticalLesson
+    public class PracticalLesson:Lesson
     {
-        public string Description {  get; set; }
+       
         public string LinkTCondition { get; set; }
         public string LinkTSolution { get; set; }
-        public PracticalLesson(string description, string linkTCondition, string linkTSolution)
+        public PracticalLesson(string description, string linkTCondition, string linkTSolution):base(description)
         {
-            Description = description;
             LinkTCondition = linkTCondition;
             LinkTSolution = linkTSolution;
         }
-        public PracticalLesson Clone()
+        public override Lesson Clone()
         {
             return new PracticalLesson(Description,LinkTCondition, LinkTSolution);
 
